@@ -6,8 +6,8 @@
     </nav>
     <nav v-else>
       <router-link to="/">Home</router-link> |
-      <a >로그아웃</a> |
-      <a >회원탈퇴</a>
+      <a @click="fnDoLogout">로그아웃</a> |
+      <a @click="fnDoDelete">회원탈퇴</a>
     </nav>
     <router-view/>
   </div>
@@ -18,6 +18,14 @@ export default {
   computed : {
     fnGetAuthStatus(){
       return this.$store.getters.fnGetAuthStatus
+    }
+  },
+  methods : {
+    fnDoLogout(){
+      this.$store.dispatch('fnDoLogout');
+    },
+    fnDoDelete(){
+      this.$store.dispatch('fnDoDelete')
     }
   }
 }

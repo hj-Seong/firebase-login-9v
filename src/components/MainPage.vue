@@ -4,6 +4,7 @@
         <img v-if="fnGetUser.photoURL" :src="fnGetUser.photoURL" alt="">
         <h3>{{fnGetUser.name}}</h3>
         <p>{{fnGetUser.email}}</p>
+    
     </div>
 </template>
 
@@ -12,9 +13,8 @@ export default {
     computed : {
         fnGetUser() {
             let oUserInfo = this.$store.getters.fnGetUser
-            console.log(this.$store.getters.fnGetUser)
             return oUserInfo
         }
-    }
+    },
 }
 </script>
